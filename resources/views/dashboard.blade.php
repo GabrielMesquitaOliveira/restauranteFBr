@@ -25,7 +25,7 @@
                                 <tr>
                                     <td class="px-6 py-4 whitespace-nowrap">{{ $pedido->id }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap">{{ $pedido->dt_pedido }}</td>
-                                    <td class="px-6 py-4 whitespace-nowrap">{{ $pedido->valor_total }}</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">R$ {{ $pedido->valor_total }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <form action="{{ route('pedidos.destroy', $pedido->id) }}" method="POST" style="display:inline;">
                                             @csrf
