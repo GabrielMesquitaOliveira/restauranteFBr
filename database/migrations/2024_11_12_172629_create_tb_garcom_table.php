@@ -6,21 +6,22 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
-    public function up(): void
+    public function up()
     {
         Schema::create('tb_garcom', function (Blueprint $table) {
             $table->id();
+            $table->string('nome');
+            $table->char('telefone', 11);
+            $table->date('data_de_contratacao');
+            $table->integer('numero_de_pedidos_servidos');
+            $table->foreignId('id_gerente')->constrained('tb_gerente');
+            $table->string('email')->unique(); // Email único
+            $table->string('password'); // Senha
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists('tb_garcom');
     }

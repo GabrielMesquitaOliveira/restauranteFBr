@@ -6,21 +6,19 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
-    public function up(): void
+    public function up()
     {
         Schema::create('tb_gerente', function (Blueprint $table) {
             $table->id();
+            $table->string('nome');
+            $table->string('email')->unique(); // Email único
+            $table->string('password'); // Senha
+            $table->integer('num_func_supervisionados');
+            $table->longText('relatorio_de_vendas');
             $table->timestamps();
         });
     }
-
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists('tb_gerente');
     }

@@ -9,10 +9,15 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('tb_chef', function (Blueprint $table) {
             $table->id();
+            $table->string('nome');
+            $table->char('telefone', 11);
+            $table->date('data_de_contratacao');
+            $table->integer('numero_de_pratos_preparados');
+            $table->foreignId('id_gerente')->constrained('tb_gerente');
             $table->timestamps();
         });
     }
