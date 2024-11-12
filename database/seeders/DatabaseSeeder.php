@@ -15,6 +15,12 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
+        $this->call([
+            ClienteSeeder::class,
+            GerenteSeeder::class, // Adicione o GerenteSeeder aqui
+            GarcomSeeder::class,
+        ]);
+
         User::factory()->create([
             'name' => 'Test User',
             'email' => 'test@example.com',
