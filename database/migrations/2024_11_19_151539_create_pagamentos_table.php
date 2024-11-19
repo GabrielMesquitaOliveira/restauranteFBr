@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Pedido;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -9,10 +10,13 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('pagamentos', function (Blueprint $table) {
-            $table->id();
+            $table->id('ID_Pagamento');
+            $table->foreignId(Pedido::class);
+            $table->decimal('Valor_Pago', 10, 2);
+            $table->enum('Forma_Pagamento', ['Cartão', 'Pix', 'Dinheiro'])->default('Cartão');
             $table->timestamps();
         });
     }

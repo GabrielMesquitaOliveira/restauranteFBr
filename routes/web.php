@@ -17,8 +17,8 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    Route::get('/pedidos/create', [PedidoController::class, 'create'])->middleware('auth')->name('pedidos.create');
-    Route::post('/pedidos', [PedidoController::class, 'store'])->middleware('auth')->name('pedidos.store');
+    Route::get('/pedidos/create', [PedidoController::class, 'create'])->name('pedidos.create');
+    Route::post('/pedidos', [PedidoController::class, 'store'])->name('pedidos.store');
 });
 
 require __DIR__.'/auth.php';

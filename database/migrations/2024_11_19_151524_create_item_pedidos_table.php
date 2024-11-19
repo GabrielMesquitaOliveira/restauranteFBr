@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Pedido;
+use App\Models\Produto;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -12,7 +14,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('item_pedidos', function (Blueprint $table) {
-            $table->id();
+            $table->id('ID_Item_Pedido');
+            $table->foreignIdFor(Pedido::class)->onDelete('cascade');
+            $table->foreignIdFor(Produto::class)->onDelete('cascade');
+            $table->integer('Quantidade');
+            $table->decimal('Preco',10,2);
             $table->timestamps();
         });
     }
