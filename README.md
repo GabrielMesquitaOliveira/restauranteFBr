@@ -81,9 +81,6 @@ Contribuições são bem-vindas! Se você deseja melhorar o projeto, siga estas 
 ## 📞 Contato
 Para dúvidas ou sugestões, entre em contato:
 
-- **E-mail**: seu_email@exemplo.com
-- **GitHub**: [seu_usuario](https://github.com/seu_usuario)
-
 ## 🎉 Agradecimentos
 Agradecemos a todos que contribuíram para o desenvolvimento deste projeto e a todos os usuários que o utilizam! Vamos juntos transformar a gestão de restaurantes!
 
