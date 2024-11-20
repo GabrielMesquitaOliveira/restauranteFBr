@@ -16,9 +16,9 @@ return new class extends Migration
     {
         Schema::create('atendimentos', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Funcionario::class)->nullable()->constrained()->nullOnDelete();
-            $table->foreignIdFor(Pedido::class)->constrained()->nullOnDelete();
-            $table->foreignIdFor(Mesa::class)->nullable()->constrained()->nullOnDelete();
+            $table->foreignIdFor(Funcionario::class)->constrained();
+            $table->foreignIdFor(Pedido::class)->constrained();
+            $table->foreignIdFor(Mesa::class)->constrained();
             $table->timestamps();
         });
     }

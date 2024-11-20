@@ -14,7 +14,7 @@ return new class extends Migration
     {
         Schema::create('produtos', function (Blueprint $table) {
             $table->id();
-            $table->foreignId(CategoriaProduto::class)->constrained()->nullOnDelete();
+            $table->foreignIdFor(CategoriaProduto::class)->constrained();
             $table->string('Imagem', 255)->nullable();
             $table->string('Nome', 100);
             $table->decimal('Preco', 10, 2);

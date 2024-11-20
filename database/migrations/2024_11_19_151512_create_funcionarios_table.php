@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('funcionarios', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Cargo::class)->constrained()->nullOnDelete();
+            $table->foreignIdFor(Cargo::class)->constrained();
             $table->string('Nome', 100);
             $table->string('Telefone', 10);
             $table->timestamps();
@@ -25,8 +25,7 @@ return new class extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->foreignIdFor(Funcionario::class)
                   ->nullable()
-                  ->constrained()
-                  ->nullOnDelete();
+                  ->constrained();
         });
     }
 
