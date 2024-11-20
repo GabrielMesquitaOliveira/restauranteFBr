@@ -14,7 +14,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('pedidos', function (Blueprint $table) {
-            $table->id('ID_Pedido');
+            $table->id();
             $table->foreignIdFor(Cliente::class);
             $table->enum('Status', ['Aguardando', 'Em Processamento', 'Concluído', 'Cancelado'])->default('Aguardando');
             $table->timestamps();

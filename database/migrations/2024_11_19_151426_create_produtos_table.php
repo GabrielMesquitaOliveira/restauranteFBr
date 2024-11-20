@@ -13,7 +13,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('produtos', function (Blueprint $table) {
-            $table->id('ID_Produto');
+            $table->id();
             $table->foreignId(CategoriaProduto::class)->onDelete('set null');
             $table->string('Imagem', 255)->nullable();
             $table->string('Nome', 100);

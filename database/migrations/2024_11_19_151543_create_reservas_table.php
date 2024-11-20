@@ -14,7 +14,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('reservas', function (Blueprint $table) {
-            $table->id('ID_Reserva');
+            $table->id();
             $table->foreignIdFor(Cliente::class)->onDelete('cascade');
             $table->foreignIdFor(Mesa::class)->onDelete('cascade');
             $table->string('Observacao',255)->nullable();

@@ -13,7 +13,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('pagamentos', function (Blueprint $table) {
-            $table->id('ID_Pagamento');
+            $table->id();
             $table->foreignId(Pedido::class);
             $table->decimal('Valor_Pago', 10, 2);
             $table->enum('Forma_Pagamento', ['Cartão', 'Pix', 'Dinheiro'])->default('Cartão');

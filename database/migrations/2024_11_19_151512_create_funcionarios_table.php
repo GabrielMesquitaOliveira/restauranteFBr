@@ -13,7 +13,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('funcionarios', function (Blueprint $table) {
-            $table->id('ID_Funcionario');
+            $table->id();
             $table->foreignIdFor(Cargo::class)->onDelete('set null');
             $table->string('Nome', 100);
             $table->string('Telefone',10);

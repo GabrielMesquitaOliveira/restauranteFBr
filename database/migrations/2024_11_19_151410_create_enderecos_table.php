@@ -13,7 +13,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('enderecos', function (Blueprint $table) {
-            $table->id('ID_Endereco');
+            $table->id();
             $table->foreignIdFor(Cliente::class)->onDelete('cascade');
             $table->string('Rua', 255);
             $table->string('Numero', 10);
