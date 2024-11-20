@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('pedidos', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Cliente::class);
+            $table->foreignIdFor(Cliente::class)->constrained();
             $table->enum('Status', ['Aguardando', 'Em Processamento', 'Concluído', 'Cancelado'])->default('Aguardando');
             $table->timestamps();
         });

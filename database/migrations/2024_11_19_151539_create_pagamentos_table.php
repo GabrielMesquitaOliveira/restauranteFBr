@@ -14,7 +14,7 @@ return new class extends Migration
     {
         Schema::create('pagamentos', function (Blueprint $table) {
             $table->id();
-            $table->foreignId(Pedido::class);
+            $table->foreignId(Pedido::class)->constrained();
             $table->decimal('Valor_Pago', 10, 2);
             $table->enum('Forma_Pagamento', ['Cartão', 'Pix', 'Dinheiro'])->default('Cartão');
             $table->timestamps();

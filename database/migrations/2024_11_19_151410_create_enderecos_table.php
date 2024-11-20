@@ -14,7 +14,7 @@ return new class extends Migration
     {
         Schema::create('enderecos', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Cliente::class)->onDelete('cascade');
+            $table->foreignIdFor(Cliente::class)->constrained()->cascadeOnDelete();
             $table->string('Rua', 255);
             $table->string('Numero', 10);
             $table->string('Bairro', 100);
