@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('reservas', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Cliente::class)->constrained()->nullOnDelete();
-            $table->foreignIdFor(Mesa::class)->constrained()->nullOnDelete();
+            $table->foreignIdFor(Cliente::class)->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(Mesa::class)->constrained()->cascadeOnDelete();
             $table->string('Observacao',255)->nullable();
             $table->timestamps();
         });
