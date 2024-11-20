@@ -11,6 +11,7 @@ class Cliente extends Authenticatable
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
+    protected $guard='cliente';
 
     /**
      * The attributes that are mass assignable.
